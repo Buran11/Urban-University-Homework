@@ -5,7 +5,7 @@ my_dict = {'Slava': 1985, 'Dasha': 1996, 'Marina': 1965}
 print(f'Dict: {my_dict}')
 print(f'Existing value: {my_dict.get('Slava')}')
 print(f'Not existing value: {my_dict.get('Max')}')
-my_dict.update({'Plina': 1989,
+my_dict.update({'Polina': 1989,
                'Sasha': 1986})
 print(f'Deleted value: {my_dict.pop('Dasha')}')
 print(f'Modified dictionary: {my_dict}')
