@@ -11,7 +11,7 @@ EXCEPTION_002 = 'TypeError_002: get_arithmetic_mean_in_list_values()\
  - The value of the argument must have a nested list!\n\
 Example: list_ = [[1, 2], [3, 4]]'
 
-#Namespace
+#Methods in app
 def convert_and_sort_set_object(set_=None):
     if (set_ != None) and (type(set_) == set):
         set_ = list(set_)
