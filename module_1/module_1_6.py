@@ -1,6 +1,6 @@
-#2023/09/25 00:00|Практическое задание по теме: "Словари и множества"
+# 2023/09/25 00:00|Практическое задание по теме: "Словари и множества"
 
-#Словари Dict
+# Словари Dict
 my_dict = {'Slava': 1985, 'Dasha': 1996, 'Marina': 1965}
 print(f'Dict: {my_dict}')
 print(f'Existing value: {my_dict.get('Slava')}')
@@ -10,7 +10,7 @@ my_dict.update({'Polina': 1989,
 print(f'Deleted value: {my_dict.pop('Dasha')}')
 print(f'Modified dictionary: {my_dict}')
 
-#Множества Set
+# Множества Set
 my_set = {33, 'fire', 5, 5, 'ice', 'fire'}
 print(f'Set: {my_set}')
 my_set.add('earth')

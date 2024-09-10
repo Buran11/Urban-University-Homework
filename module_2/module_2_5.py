@@ -1,4 +1,4 @@
-#2023/10/03 00:00|Домашняя работа по уроку "Функции в Python.Функция с параметром"
+# 2023/10/03 00:00|Домашняя работа по уроку "Функции в Python.Функция с параметром"
 
 def get_matrix(n=None, m=None, value=None):
     matrix = []
@@ -10,11 +10,12 @@ def get_matrix(n=None, m=None, value=None):
     else:
         for i in row:
             matrix.append(temp_list)
-            for j in col:            
+            for j in col:
                 temp_list.append(value)
                 break
         flag = True
     return matrix if flag else temp_list
+
 
 result1 = get_matrix(2, 2, 10)
 result2 = get_matrix(3, 5, 42)
@@ -29,4 +30,3 @@ result_test_exp2 = get_matrix(0, 2, 3)
 result_test_exp3 = get_matrix(3, -1, 3)
 result_test_exp4 = get_matrix(3, 0, 3)
 print(result_test_exp1, result_test_exp2, result_test_exp3, result_test_exp4)
-
