@@ -20,9 +20,9 @@ def set_exception_printed(exception_case, recipient=None, sender=None, ):
 
 def send_email(message, recipient, sender='university.help@gmail.com'):
     recipient = str(recipient)
-    str_ = recipient + sender
-    tuple_ = ('.com', '.net', '.ru')
-    if '@' not in str_ or not sender.endswith(tuple_) or not recipient.endswith(tuple_):
+    sum_strings_input = recipient + sender
+    domains_tuple = ('.com', '.net', '.ru')
+    if '@' not in sum_strings_input or not sender.endswith(domains_tuple) or not recipient.endswith(domains_tuple):
         set_exception_printed(1, recipient, sender)
     elif sender == recipient:
         set_exception_printed(2, recipient, sender)
