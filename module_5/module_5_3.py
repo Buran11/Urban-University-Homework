@@ -32,35 +32,43 @@ class House:
         self.__verify_data(other)
         if isinstance(other, int):
             return self.number_of_floor == other
-        else:
+        elif isinstance(other, House):
             return self.number_of_floor == other.number_of_floor
 
     # 2
 
     def __lt__(self, other):
         self.__verify_data(other)
+        if isinstance(other, int):
+            return self.number_of_floor < other
+        elif isinstance(other, House):
+            return self.number_of_floor < other.number_of_floor
         return self.number_of_floor < other.number_of_floor
 
     def __le__(self, other):
         self.__verify_data(other)
-        return self.number_of_floor <= other.number_of_floor
+        return self.__lt__(other) or self.__eq__(other)
 
     def __gt__(self, other):
         self.__verify_data(other)
-        return self.number_of_floor > other.number_of_floor
+        return not self.__le__(other)
 
     def __ge__(self, other):
         self.__verify_data(other)
-        return self.number_of_floor >= other.number_of_floor
+        return not self.__lt__(other)
 
     def __ne__(self, other):
         self.__verify_data(other)
-        return self.number_of_floor != other.number_of_floor
+        return not self.__eq__(other)
 
     # 3
     def __add__(self, value):
         self.__verify_data(value)
-        return House(self.name, self.number_of_floor + value)
+        if isinstance(value, int):
+            self.number_of_floor += value
+        elif isinstance(value, House):
+            self.number_of_floor += value.number_of_floor
+        return self
 
     # 4
     def __iadd__(self, value):
