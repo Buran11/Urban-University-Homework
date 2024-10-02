@@ -1,5 +1,8 @@
 class Human:
+
+    head = True
     # Метод вызывается при создании экземпляра. __init__ - магический метод, дандер метод
+
     def __init__(self, name, age) -> None:
         self.name = name  # Атрибут Переменные экземпляра
         self.age = age
@@ -37,8 +40,9 @@ class Human:
 den = Human('Denis', 22)  # экземпляр класса
 max = Human('Maxim', 22)
 a = 6
-print(den)  # str
+print(Human.head)
 
+# print(den)  # str
 # max.name = 'Denis'
 # if den: # bool
 #     den.say_info()
