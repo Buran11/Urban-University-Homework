@@ -1,24 +1,26 @@
 class Human:
     head = True
+    _legs = True
+    __arms = True
 
     def say_hallo(self):
         print('Hallo!')
 
+    def about(self):
+        print(self.head, self._legs, self.__arms)
+
 
 class Student(Human):
-    head = False
-
-    def about(self):
-        print('I am a student')
+    arms = False
+    pass
 
 
 class Teacher(Human):
     pass
 
 
-# human = Human()
+human = Human()
 student = Student()
-teacher = Teacher()
-student.say_hallo()
-teacher.say_hallo()
-print(student.head)
+
+
+print(student._Human__arms)
