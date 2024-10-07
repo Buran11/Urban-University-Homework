@@ -8,10 +8,10 @@ class Animal:
     fed - голодное ли животное
     name - название животного
     '''
+    alive = True
+    fed = False
 
-    def __init__(self, name, alive: bool = True, fed: bool = False):
-        self.alive = alive
-        self.fed = fed
+    def __init__(self, name):
         self.name = name
     
     def eat(self, food):
@@ -30,9 +30,9 @@ class Plant:
     edible - съедобное ли растение
     name - название растения
     '''
+    edible = False
 
-    def __init__(self, name, edible: bool = False):
-        self.edible = edible
+    def __init__(self, name):        
         self.name = name
 
 
