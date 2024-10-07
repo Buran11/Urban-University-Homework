@@ -13,15 +13,14 @@ class Animal:
         self.alive = alive
         self.fed = fed
         self.name = name
-
-    # (конвенция DRY)
-    # def eat(self, food):
-    #     if food.edible:
-    #         print(f'{self.name} съел {food.name}')
-    #         self.fed = True
-    #     else:
-    #         print(f'{self.name} не стал есть {food.name}')
-    #         self.alive = False
+    
+    def eat(self, food):
+        if food.edible:
+            print(f'{self.name} съел {food.name}')
+            self.fed = True
+        else:
+            print(f'{self.name} не стал есть {food.name}')
+            self.alive = False
 
 
 class Plant:
@@ -40,38 +39,15 @@ class Plant:
 class Mammal(Animal):
     '''
     Класс травоядное животное
-    Методы:
-    eat() - определяет что именно съедает животное
-
     '''
-    # (конвенция DRY)
-    # pass
-
-    def eat(self, food):
-        if food.edible:
-            print(f'{self.name} съел {food.name}')
-            self.fed = True
-        else:
-            print(f'{self.name} не стал есть {food.name}')
-            self.alive = False
+    pass
 
 
 class Predator(Animal):
     '''
-    Класс хищное животное
-    Методы:
-    eat() - определяет что именно съедает животное
+    Класс хищное животное    
     '''
-    # (конвенция DRY)
-    # pass
-
-    def eat(self, food):
-        if food.edible:
-            print(f'{self.name} съел {food.name}')
-            self.fed = True
-        else:
-            print(f'{self.name} не стал есть {food.name}')
-            self.alive = False
+    pass
 
 
 class Flower(Plant):
