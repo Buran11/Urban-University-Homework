@@ -62,10 +62,8 @@ class Fruit(Plant):
     Класс фрукт - съедобное
     '''
 
-    def __init__(self, edible):
-        super().__init__(edible)
-        self.edible = True
-
+    edible = True
+    
 # Вывод на консоль:
 # Волк с Уолл-Стрит
 # Цветик семицветик
