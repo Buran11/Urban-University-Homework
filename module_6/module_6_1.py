@@ -13,7 +13,7 @@ class Animal:
 
     def __init__(self, name):
         self.name = name
-    
+
     def eat(self, food):
         if food.edible:
             print(f'{self.name} съел {food.name}')
@@ -32,7 +32,7 @@ class Plant:
     '''
     edible = False
 
-    def __init__(self, name):        
+    def __init__(self, name):
         self.name = name
 
 
@@ -61,9 +61,9 @@ class Fruit(Plant):
     '''
     Класс фрукт - съедобное
     '''
-    
+
     edible = True
-    
+
 # Вывод на консоль:
 # Волк с Уолл-Стрит
 # Цветик семицветик

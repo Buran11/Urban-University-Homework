@@ -1,26 +1,30 @@
 class Human:
-    head = True
-    _legs = True
-    __arms = True
+    def __init__(self, name, group):
+        self.name = name
+        super().__init__(group)
+        super().about()
 
-    def say_hallo(self):
-        print('Hallo!')
+    def info(self):
+        print(f'Hi, my name is {self.name}')
+
+
+class StudentGroup:
+    def __init__(self, group):
+        self.group = group
 
     def about(self):
-        print(self.head, self._legs, self.__arms)
+        print(f'{self.name} is group {self.group}')
 
 
-class Student(Human):
-    arms = False
-    pass
+class Student(Human, StudentGroup):
+    def __init__(self, name, place, group):
+        super().__init__(name, group)
+        self.place = place
+        super().info()
 
 
-class Teacher(Human):
-    pass
+# human = Human('Denis')
+# print(human.name)
+student = Student('Maxim', 'Urban', 'Python 1')
 
-
-human = Human()
-student = Student()
-
-
-print(student._Human__arms)
+print(Student.mro())
