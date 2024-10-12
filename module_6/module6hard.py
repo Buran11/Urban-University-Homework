@@ -95,7 +95,7 @@ class Triangle(Figure):
         p = super().__len__() / 2
         s_triangle = sqrt(
             p * (p - super().get_sides()[0]) * (p - super().get_sides()[1]) * (p - super().get_sides()[2]))
-        # # logging.info("Площадь треугольника: %s", s_triangle)
+        # logging.info("Площадь треугольника: %s", s_triangle)
         return round(s_triangle, 2)
         pass
 
@@ -120,8 +120,8 @@ class Cube(Figure):
 # Точка входа
 if __name__ == '__main__':
     # Логирование в консоль
-    logging.basicConfig(level=logging.INFO,
-                        format="%(asctime)s %(levelname)s %(message)s")
+    # logging.basicConfig(level=logging.INFO,
+    #                     format="%(asctime)s %(levelname)s %(message)s")
 
     circle1 = Circle((200, 200, 100), 10)  # (Цвет, стороны)
     cube1 = Cube((222, 35, 130), 6)
