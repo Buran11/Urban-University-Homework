@@ -1,11 +1,14 @@
 from pprint import pprint
 
 name = 'sample2.txt'
-file = open(name, 'r')  # open file  # r - read, w - write, a - append
-# pprint(file.read())  # read all
-# file.write('hello')  # write
-pprint(file.tell())
+file = open(name, 'r', encoding='utf-8')
+print(file.writable())
+print(file.readable())
+print(file.seekable())
+print(file.buffer)
+print(file.closed)
+print(file.tell())
+
 pprint(file.read())
-pprint(file.seek(20))
-pprint(file.read())
-file.close()  # close file
+print(file.tell())
+file.close()
