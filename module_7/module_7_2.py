@@ -13,11 +13,13 @@ def custom_write(file_name: str, string: list):
         file.close()
     return strings_positions
 
-    # Вывод на консоль:
-    # ((1, 0), 'Text for tell.')
-    # ((2, 16), 'Используйте кодировку utf-8.')
-    # ((3, 66), 'Because there are 2 languages!')
-    # ((4, 98), 'Спасибо!')
+# Вывод на консоль:
+# ((1, 0), 'Text for tell.')
+# ((2, 16), 'Используйте кодировку utf-8.')
+# ((3, 66), 'Because there are 2 languages!')
+# ((4, 98), 'Спасибо!')
+
+
     # Точка входа
 if __name__ == '__main__':
     # Пример выполняемого кода:
@@ -25,8 +27,7 @@ if __name__ == '__main__':
         'Text for tell.',
         'Используйте кодировку utf-8.',
         'Because there are 2 languages!',
-        'Спасибо!'
-    ]
+        'Спасибо!']
 
     result = custom_write('test.txt', info)
     for elem in result.items():
