@@ -14,7 +14,7 @@ import time
 
 
 def main():
-    directory = r'E:\Urban\rep\Urban-University-Homework\module_7\second'
+    directory = r'.'
     for root, dirs, files in os.walk(directory):
         for file in files:
             filepath = os.path.join(root, file)
