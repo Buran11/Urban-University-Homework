@@ -2,7 +2,7 @@
 
 def is_prime(func):
     '''
-    декоратор для проверки на простое число
+    Декоратор для проверки на простое число
     '''
     def wrapper(*args):
         for a in args:
@@ -21,7 +21,7 @@ def is_prime(func):
 @is_prime
 def sum_three(a, b, c):
     '''
-    сумма трех чисел
+    Сумма трех чисел
     '''
     return a + b + c
 
