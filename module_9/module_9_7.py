@@ -5,16 +5,17 @@ def is_prime(func):
     Декоратор для проверки на простое число
     '''
     def wrapper(*args):
-        for a in args:
-            if a < 2:
+        temp_resalt = func(*args)
+        for i in range(2, temp_resalt):
+            if i < 2:
+                continue
+            if temp_resalt % i == 0:
                 print('Составное')
-                return False
-            for i in range(2, int(a ** 0.5) + 1):
-                if a % i == 0:
-                    print('Составное')
-                    return False
-            print('Простое')
-            return func(*args)
+                break
+            else:
+                print('Простое')
+                break
+        return temp_resalt
     return wrapper
 
 
@@ -27,7 +28,9 @@ def sum_three(a, b, c):
 
 
 def main():
-    result = sum_three(2, 3, 6)
+    result = sum_three(2, 3, 6)  # Проверка на простое
+    print(result)
+    result = sum_three(2, 1, 3)  # Проверка на составное
     print(result)
 
 
