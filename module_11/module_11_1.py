@@ -1,6 +1,4 @@
 # 2023/12/22 00:00|Домашнее задание по теме 'Обзор сторонних библиотек Python'
-
-
 import PIL.Image
 import requests
 import pandas
