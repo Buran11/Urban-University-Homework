@@ -5,7 +5,6 @@ import PIL.Image
 import requests
 import pandas
 import numpy
-import openpyxl
 import matplotlib.pyplot as plt
 import PIL  # pip install Pillow
 
