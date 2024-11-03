@@ -1,6 +1,5 @@
 # 2023/12/26 00:00|Домашнее задание по теме "Интроспекция"
 import inspect
-from pprint import pprint
 
 
 def introspection_info(obj: object):
