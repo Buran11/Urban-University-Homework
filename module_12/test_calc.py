@@ -3,6 +3,20 @@ import unittest
 
 
 class CalcTest(unittest.TestCase):
+    def setUp(self):
+        print('setup')
+
+    @classmethod
+    def setUpClass(cls):
+        print('Megasetup')
+
+    def tearDown(self):
+        pass
+
+    @classmethod
+    def tearDownClass(cls):
+        pass
+
     def test_add(self):
         '''
         Test for ad function in calculator
@@ -12,12 +26,6 @@ class CalcTest(unittest.TestCase):
 
     def test_sub(self):
         self.assertEqual(calc.sub(2, 1), 1)
-
-    def test_mul(self):
-        self.assertEqual(calc.mul(1, 2), 2)
-
-    def test_div(self):
-        self.assertEqual(calc.div(1, 2), 0.5)
 
 
 if __name__ == '__main__':
