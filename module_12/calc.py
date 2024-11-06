@@ -1,3 +1,6 @@
+import logging
+
+
 def add(a, b):
     return a + b
 
@@ -11,9 +14,13 @@ def mul(a, b):
 
 
 def div(a, b):
-    if b == 0:
-        raise ZeroDivisionError('division by zero')
-    return a / b
+    try:
+        a / b
+        logging.info(f'Successfully divide {a} / {b}')
+        return a / b
+    except ZeroDivisionError as err:
+        logging.error('division by zero', exc_info=True)
+        return 0
 
 
 def sqrt(a):
@@ -25,4 +32,7 @@ def pow(a, b):
 
 
 if __name__ == '__main__':
-    print(div(1, 0))
+    logging.basicConfig(level=logging.INFO, filemode='w', filename='calc.log',
+                        format='%(asctime)s | %(levelname)s | %(message)s')
+    print(div(3, 4))
+    print(div(3, 0))
