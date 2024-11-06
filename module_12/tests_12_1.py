@@ -19,17 +19,16 @@ class Runner:
 
 
 class RunnerTest(unittest.TestCase):
-    def test_walk(self):
-        '''
-        RU: Тестируем метод ходьбы на скалирование дистанции
-        EU: We are testing the walking method for scanning the distance
-        :return:
-        '''
+    is_frozen = False
+
+    @unittest.skipIf(is_frozen, reason='Тесты в этом кейсе заморожены.')
+    def test_walk(self):        
         runner = Runner('Maria')
         for _ in range(10):
             runner.walk()
         self.assertEqual(50, runner.distance)
 
+    @unittest.skipIf(is_frozen, reason='Тесты в этом кейсе заморожены.')
     def test_run(self):
         runner = Runner('Maxim')
         for _ in range(10):
@@ -37,6 +36,7 @@ class RunnerTest(unittest.TestCase):
         self.assertEqual(100, runner.distance)
         # self.assertEqual(50, runner.distance)  # AssertionError
 
+    @unittest.skipIf(is_frozen, reason='Тесты в этом кейсе заморожены.')
     def test_challenge(self):
         runner1 = Runner('Alex')
         runner2 = Runner('Maxim')
