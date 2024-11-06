@@ -1,4 +1,3 @@
-# 2024/01/09 00:00|Домашнее задание по теме "Методы Юнит-тестирования"
 import unittest
 
 
@@ -44,7 +43,37 @@ class Tournament:
         return finishers
 
 
+class RunnerTest(unittest.TestCase):
+    is_frozen = False
+
+    @unittest.skipIf(is_frozen, reason='Тесты в этом кейсе заморожены.')
+    def test_walk(self):
+        runner = Runner('Maria')
+        for _ in range(10):
+            runner.walk()
+        self.assertEqual(50, runner.distance)
+
+    @unittest.skipIf(is_frozen, reason='Тесты в этом кейсе заморожены.')
+    def test_run(self):
+        runner = Runner('Maxim')
+        for _ in range(10):
+            runner.run()
+        self.assertEqual(100, runner.distance)
+        # self.assertEqual(50, runner.distance)  # AssertionError
+
+    @unittest.skipIf(is_frozen, reason='Тесты в этом кейсе заморожены.')
+    def test_challenge(self):
+        runner1 = Runner('Alex')
+        runner2 = Runner('Maxim')
+        for _ in range(10):
+            runner1.walk()
+            runner2.run()
+        self.assertNotEqual(runner1.distance, runner2.distance)
+
+
 class TurnamentTest(unittest.TestCase):
+    is_frozen = True
+
     @classmethod
     def setUpClass(self):
         self.all_results = {}
@@ -65,6 +94,7 @@ class TurnamentTest(unittest.TestCase):
     def tearDownClass(self):
         pass
 
+    @unittest.skipIf(is_frozen, reason='Тесты в этом кейсе заморожены.')
     def test_start1(self):
         tournament = Tournament(90, self.runner1, self.runner3)
         self.all_results.update(tournament.start())
@@ -72,6 +102,7 @@ class TurnamentTest(unittest.TestCase):
         self.assertTrue(self.all_results.get(
             last_key).name == self.runner3.name)
 
+    @unittest.skipIf(is_frozen, reason='Тесты в этом кейсе заморожены.')
     def test_start2(self):
         tournament = Tournament(90, self.runner2, self.runner3)
         self.all_results.update(tournament.start())
@@ -79,27 +110,14 @@ class TurnamentTest(unittest.TestCase):
         self.assertTrue(self.all_results.get(
             last_key).name == self.runner3.name)
 
+    @unittest.skipIf(is_frozen, reason='Тесты в этом кейсе заморожены.')
     def test_start3(self):
         tournament = Tournament(90, self.runner1, self.runner2, self.runner3)
         self.all_results.update(tournament.start())
         last_key = max(self.all_results.keys())
         self.assertTrue(self.all_results.get(
             last_key).name == self.runner3.name)
-    # При показателе дистанции 6 Ник обгоняет Андрей.
 
 
-'''
-    Для корректной работы нужно переписать метод start в классе Tournament так, 
-    что бы он сортировал объекты класса Runner по скорости и пройденной дистанции.
-    При зменении скорости у объектов класса Runner не меняется порядок их сортировки.
-    При сравнение в test_start3 если указать дистанцию 6 или меньше, Ник обгоняет Андрей.
-    
-'''
 if __name__ == '__main__':
     unittest.main()
-    # runner1 = Runner('Усэйн', 10)
-    # runner2 = Runner('Андрей', 9)
-    # runner3 = Runner('Ник', 3)
-    # tournament = Tournament(6, runner1, runner2, runner3)
-    # a = tournament.start()
-    # print(a)
