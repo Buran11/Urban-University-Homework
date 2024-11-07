@@ -1,13 +1,8 @@
-# ActavianBot
-# 2022/11/15
-# https://t.me/ActavianBot
-# api: 7663349655:AAGezQpU1w27WnIbSU0-Z7xwE4LdS38j33U
-
 from aiogram import Bot, Dispatcher, executor, types
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 import asyncio
 
-api = '7663349655:AAGezQpU1w27WnIbSU0-Z7xwE4LdS38j33U'
+api = ''
 bot = Bot(token=api)
 dp = Dispatcher(bot, storage=MemoryStorage())
 
