@@ -3,11 +3,12 @@ from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters.state import State, StatesGroup
 
-
 import logging
 
 from config import *
 from keyboards import *
+from admin import *
+from db import *
 import texts
 
 logging.basicConfig(level=logging.INFO)
