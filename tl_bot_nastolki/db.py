@@ -29,17 +29,31 @@ cursor.execute('CREATE INDEX IF NOT EXISTS idx_email ON Users (email)')
 
 # cursor.execute('SELECT username, age FROM Users WHERE age > ?', (29,))
 
-cursor.execute('SELECT username, age FROM Users GROUP BY AGE')
+# cursor.execute('SELECT username, age FROM Users GROUP BY AGE')
 
-users = cursor.fetchall()
-for user in users:
-    print(user)
+# users = cursor.fetchall()  # получение данных
+# for user in users:
+#     print(user)
 
 # cursor.execute('UPDATE Users SET age = ? WHERE username = ?',
 #                (29, 'newuser'))  # изменение данных
 
 # cursor.execute('DELETE FROM Users WHERE username = ?',
 #                ('newuser',))  # удаление данных
+
+# cursor.execute('SELECT COUNT(*) FROM Users')  # подсчет
+# cursor.execute('SELECT COUNT(*) FROM Users WHERE age > ?', (28, ))
+cursor.execute('SELECT SUM(age) FROM Users')
+total1 = cursor.fetchone()[0]  # Получаем один конкретный элемент
+cursor.execute('SELECT COUNT(*) FROM Users')
+total2 = cursor.fetchone()[0]
+print(total1, total1/total2)
+# cursor.execute('SELECT AVG(age) FROM Users') # средний возраст
+# cursor.execute('SELECT MIN(age) FROM Users') # минимум
+cursor.execute('SELECT MAX(age) FROM Users')  # максимум
+avg_age = cursor.fetchone()[0]
+print(avg_age)
+
 
 connection.commit()
 connection.close()
