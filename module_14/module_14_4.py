@@ -7,15 +7,15 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 from crud_functions import *  # MODULE_14_4
+
+
 '''
 Префиксы в именах экземпляров класса:
 rkb_ - reply keyboard, ikb_ - inline keyboard
 rb_ - reply button, ib_ - inline button
 '''
-
-
 # Bot
-api = '7663349655:AAGezQpU1w27WnIbSU0-Z7xwE4LdS38j33U'
+api = ''
 bot = Bot(token=api)
 dp = Dispatcher(bot, storage=MemoryStorage())
 
@@ -60,7 +60,7 @@ class UserStates(StatesGroup):
 
 
 # ORM sqlite
-def orm_add_product():  # MODULE_14_4
+def orm_add_products():  # MODULE_14_4
     initiate_db()
     for i in range(1, 5):
         add_product(f'Product{i}', f'description{i}', f'{i * 100}')
@@ -140,5 +140,5 @@ async def all_messages(message: types.Message):
 
 # Run
 if __name__ == '__main__':
-    orm_add_product()  # MODULE_14_4
+    orm_add_products()  # MODULE_14_4
     executor.start_polling(dp, skip_updates=True)
