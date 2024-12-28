@@ -1,25 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'fourth_task/menu.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>{{title}}</title>
-</head>
+{% block pagename %}
+{{block.super}}
+{% endblock %}
 
-<body>
-    <h1>{{header}}</h1>
-    <ul>
-        <li><button>Купить</button><a href="#">The Elden Ring</a></li>
-        <p></p>
-        <li><button>Купить</button><a href="#">Tekkin 8</a></li>
-        <p></p>
-        <li><button>Купить</button><a href="#">Gran Turismo 7</a></li>
-        <p></p>
-    </ul>
-    <form action="http://127.0.0.1:8000/platform2/">
-        <button>{{b_back}}</button>
-    </form>
+{% block menu %}
+{{block.super}}
+{% endblock %}
 
-</body>
-
-</html>
+{% block content %}
+{% for game in store %}
+<ul>
+    <li><button>Купить</button> - <a href="#">{{game}}</a></li>
+    <p></p>
+</ul>
+{% endfor %}
+{% endblock %}

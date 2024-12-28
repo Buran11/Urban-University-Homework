@@ -18,6 +18,7 @@ def store(request):
         'title': 'Store',
         'header': 'Игры',
         'b_back': 'На главную',
+        'buy': 'Купить',
         'first_game': 'The Elden Ring',
         'second_game': 'Tekkin 8',
         'third_game': 'Gran Turismo 7'

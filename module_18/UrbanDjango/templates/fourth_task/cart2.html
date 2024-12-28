@@ -1,19 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'fourth_task/menu.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>{{title}}</title>
-</head>
+{% block pagename %}
+{{block.super}}
+{% endblock %}
 
-<body>
-    <h1>{{header}}</h1>
-    <ul>
-        <h2>{{catr_is_empty}}</h2>
-    </ul>
-    <form action="http://127.0.0.1:8000/platform2/">
-        <button>{{b_back}}</button>
-    </form>
-</body>
+{% block menu %}
+{{block.super}}
+{% endblock %}
 
-</html>
+{% block content %}
+<h2>{{catr_is_empty}}</h2>
+{% endblock %}
