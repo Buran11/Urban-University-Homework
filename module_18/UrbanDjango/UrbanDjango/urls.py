@@ -3,6 +3,7 @@ from django.urls import path  # type: ignore
 from task2.views import func_view, ClassView
 from task3.views import cart, store, platform
 from task4.views import platform2, store2, cart2
+from task5.views import django_sign_up, sign_up_by_html
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -14,4 +15,6 @@ urlpatterns = [
     path('platform2/cart2/', cart2),
     path('platform2/store2/', store2),
     path('platform2/', platform2),
+    path('', sign_up_by_html),
+    path('django_sign_up/', django_sign_up),
 ]
