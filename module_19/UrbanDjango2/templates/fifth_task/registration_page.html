@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registration</title>
+</head>
+
+<body>
+    <h4>{{info}}</h4>
+
+    <form method="post">
+        {% csrf_token %}
+        <lable for="username">Введите Логин</lable>
+        <input type="text" name="username" id="username" maxlength="30" required>
+
+        <label for="password">Введите Пароль</label>
+        <input type="password" name="password" id="password" maxlength="8" required>
+
+        <label for="repeat_password">Повторите Пароль</label>
+        <input type="password" name="repeat_password" id="repeat_password" maxlength="8" required>
+
+        <label for="age">Введите Возраст</label>
+        <input type="number" name="age" id="age" required>
+
+        <button type="submit">Зарегистрироваться</button>
+
+        <h2 style="text-align: center;">{{greating}}</h2>
+    </form>
+</body>
+
+</html>

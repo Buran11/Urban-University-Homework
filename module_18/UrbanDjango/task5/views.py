@@ -47,7 +47,7 @@ def sign_up_by_html(request):
 
 
 def django_sign_up(request):
-    info = {}
+    info = {'error': ''}
     greating = ''
     if request.method == 'POST':
         form = UserRegister(request.POST)

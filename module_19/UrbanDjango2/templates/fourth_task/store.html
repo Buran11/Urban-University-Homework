@@ -11,7 +11,8 @@
 {% block content %}
 {% for game in store %}
 <ul>
-    <li>{{game}}<button>Купить</button></li>
+    <li>{{game.title}} | {{game.description}}. Стоимость: {{game.cost}}<button>Купить</button>
+    </li>
     <p></p>
 </ul>
 {% endfor %}
