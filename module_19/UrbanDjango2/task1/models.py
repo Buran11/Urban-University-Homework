@@ -2,6 +2,16 @@ from django.db import models  # type: ignore
 
 
 # Create your models here.
+class News(models.Model):
+    title = models.CharField(max_length=30)
+    content = models.TextField()
+    data = models.DateField(auto_now=True)
+    time = models.TimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
+
+
 class Buyer(models.Model):
     name = models.CharField(max_length=30)
     age = models.IntegerField()

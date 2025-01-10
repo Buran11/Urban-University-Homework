@@ -1,9 +1,22 @@
 from django.shortcuts import render  # type: ignore
 from .forms import UserRegister
-from .models import Game, Buyer
+from .models import Game, Buyer, News
+from django.core.paginator import Paginator  # type: ignore
 
 
 # Create your views here.
+def news(request):
+    news = News.objects.all().order_by('-data', '-time')
+    paginator = Paginator(news, 3)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    context = {
+        'title': 'News',
+        'header': 'Новости',
+        'page_obj': page_obj, }
+    return render(request, 'fourth_task/news.html', context)
+
+
 def sign_up_by_html(request):
     users = Buyer.objects.all()
     if request.method == 'POST':

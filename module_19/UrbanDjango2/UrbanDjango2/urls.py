@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin  # type: ignore
 from django.urls import path  # type: ignore
-from task1.views import platform, store, cart, sign_up_by_html, django_sign_up
+from task1.views import platform, store, cart, sign_up_by_html, django_sign_up, news
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,4 +25,5 @@ urlpatterns = [
     path('platform/', platform),
     path('', sign_up_by_html),
     path('django_sign_up/', django_sign_up),
+    path('platform/news/', news),
 ]

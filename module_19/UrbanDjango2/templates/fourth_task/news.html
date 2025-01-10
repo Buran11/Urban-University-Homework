@@ -1,0 +1,48 @@
+{% extends 'fourth_task/menu.html' %}
+
+{% block pagename %}
+{{block.super}}
+{% endblock %}
+
+{% block menu %}
+{{block.super}}
+{% endblock %}
+
+{% block content %}
+{% for news in page_obj %}
+<h2>{{ news.title }}</h2>
+<p>{{ news.content }}</p>
+<b>Data: {{ news.data }} | Time: {{ news.time }}</b>
+<hr align="left" size="3" width="30%" color="black">
+{% endfor %}
+
+{% if page_obj.has_other_pages %}
+<nav align="left" aria-label="Page navigation">
+    <div class="pagination">
+        {% if page_obj.has_previous %}
+        <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+            <span aria-hidden="true">&lsaquo;&lsaquo;&lsaquo;</span></a>
+        {% else %}
+        <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&lsaquo;&lsaquo;&lsaquo;</span></a>
+        {% endif %}
+
+        {% for i in page_obj.paginator.page_range %}
+        {% if page_obj.number == i %}
+        <b>{{ i }}</b>
+        {% else %}
+        <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+        {% endif %}
+        {% endfor %}
+
+        {% if page_obj.has_next %}
+        <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+            <span aria-hidden="true">&rsaquo;&rsaquo;&rsaquo;</span></a>
+        {% else %}
+        <a class="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&rsaquo;&rsaquo;&rsaquo;</span></a>
+        {% endif %}
+    </div>
+</nav>
+{% endif %}
+{% endblock %}
